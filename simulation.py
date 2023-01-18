@@ -5,6 +5,9 @@ import pybullet as p
 import time
 import pyrosim.pyrosim as pyrosim
 import constants as c
+from pyrosim.neuralNetwork import NEURAL_NETWORK
+
+
 
 class SIMULATION:
     def __init__(self):
@@ -20,9 +23,10 @@ class SIMULATION:
         for i in range(c.iterations):
             p.stepSimulation()
             self.robot.Sense(i)
+            self.robot.Think()
             self.robot.Act(i)
             time.sleep(1/1000)
-            print(i)
+            # print(i)
 
     def __del__(self):
         p.disconnect()

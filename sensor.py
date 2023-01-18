@@ -13,5 +13,3 @@ class SENSOR:
         
     def Get_Value(self, time):
         self.values[time] = pyrosim.Get_Touch_Sensor_Value_For_Link(self.linkName)
-        if(time == 999):
-            print(self.values)
