@@ -10,9 +10,13 @@ from pyrosim.neuralNetwork import NEURAL_NETWORK
 
 
 class SIMULATION:
-    def __init__(self):
+    def __init__(self, directOrGUI):
 
-        self.physicsClient = p.connect(p.GUI)
+        if directOrGUI == "DIRECT":
+            self.physicsClient = p.connect(p.DIRECT)
+        else:
+            self.physicsClient = p.connect(p.GUI)
+
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.setGravity(0,0,-9.8)
 
@@ -22,7 +26,7 @@ class SIMULATION:
     def Run(self):
         for i in range(c.iterations):
             p.stepSimulation()
-            time.sleep(1/1000)
+            time.sleep(1/10000)
             self.robot.Sense(i)
             self.robot.Think()
             self.robot.Act(i)

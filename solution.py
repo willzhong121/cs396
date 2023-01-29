@@ -46,8 +46,14 @@ class SOLUTION:
 
         pyrosim.End()
 
-    def Evaluate(self):
+    def Evaluate(self, directOrGUI):
         self.Create_Body()
         self.Create_Brain()
         self.Create_World()
-        os.system("python3 simulate.py")
+        os.system("python3 simulate.py " + directOrGUI)
+        f = open("fitness.txt", "r")
+        self.fitness = float(f.read())
+        f.close()
+
+    def Mutate(self):
+        self.weights[random.randint(0,2), random.randint(0,1)] = random.random()*2-1
