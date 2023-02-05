@@ -10,7 +10,7 @@ from pyrosim.neuralNetwork import NEURAL_NETWORK
 
 
 class SIMULATION:
-    def __init__(self, directOrGUI):
+    def __init__(self, directOrGUI, solutionID):
 
         if directOrGUI == "DIRECT":
             self.physicsClient = p.connect(p.DIRECT)
@@ -21,12 +21,14 @@ class SIMULATION:
         p.setGravity(0,0,-9.8)
 
         self.world = WORLD()
-        self.robot = ROBOT()
+        self.robot = ROBOT(solutionID)
+        self.directOrGUI = directOrGUI
 
     def Run(self):
         for i in range(c.iterations):
             p.stepSimulation()
-            time.sleep(1/10000)
+            if(self.directOrGUI == "GUI"):
+                time.sleep(1/10000)
             self.robot.Sense(i)
             self.robot.Think()
             self.robot.Act(i)
