@@ -1,6 +1,11 @@
-# Assignment 6: Instructions and Explanation
-# Simply run the "search.py" file to run the simulation and see a random snake appear!
-# The program uses the following parameters when creating a snake:
-# - Random number of randomly sized links (4-6 links with xyz parameters of 0-1)
-# - Random sensor placement (50% chance for sensor to be added)
-# - Links with sensors are green, links without sensors are blue
+# CS396 - Assignment 7
+This codebase was created for the CS396 course at Northwestern University. It creates a random 3D lizard-like creature that wiggles around in an open environment. Most of the code was created by following Ludobots, an online course found at https://www.reddit.com/r/ludobots/. Ludobots makes use of the PyroSim modeling interface; the repository can be found at https://github.com/jbongard/pyrosim.git.
+
+**Instructions**
+TBA
+
+**Video**
+TBA
+
+**Diagram and Explanation**
+TBA
