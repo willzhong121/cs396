@@ -58,7 +58,7 @@ class SOLUTION:
             name="Limb3", pos=[-leg3_dims[0]/2, 0, -leg3_dims[2]/2], size = leg3_dims, colorString = color3[0], colorName = color3[1])
         
         color4 = self.Determine_sensor()
-        leg4_dims = self.Random_size()
+        leg4_dims = self.Random_size() 
         pyrosim.Send_Joint(
             name = "Main_Limb4" , parent= "Main" , child = "Limb4" , type = "revolute", position = [-torso_dims[0]/2,-torso_dims[1]/3,3-torso_dims[2]/2])
         pyrosim.Send_Cube(
