@@ -11,4 +11,4 @@ TBA
 
 **Diagram and Explanation**:
 
-TBA
+<img src="diagram.png"  width="60%" height="30%">
