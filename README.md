@@ -13,7 +13,7 @@ https://www.youtube.com/watch?v=paAGQGJgr74
 
 **Diagram and Explanation**
 
-<img src="diagram.PNG"  width="60%" height="30%">
+<img src="diagram.PNG"  width="60%" height="40%">
 
 To create a lizard-like creature, the code starts by defining a main link that serves as the torso. This torso is centered at (0, 0, 3), with the 3 units in the z-axis being added to account for the creature potentially dipping into negative z-space. The torso is generated with a random size with bounds for dimensions so that it is neither too large or too small.
 
