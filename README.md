@@ -28,3 +28,4 @@ After the torso is created, the code determines how many limb links are to be ma
 Sensor placement is determined by 50% probability. All of the links are compiled into a dictionary and the code iterates through each link to determine whether or not it will have a sensor. If so, the code turns the color of the link green. If not, the link is colored blue.
 
 **Mutation Function Explanation**
+sw
