@@ -9,7 +9,7 @@ Simply run the "search.py" file to run the simulation and see an optimized 3D cr
 
 **Video**
 
-https://www.youtube.com/watch?v=paAGQGJgr74
+https://www.youtube.com/watch?v=1fdhEwyyRVk
 
 **Diagram**
 
