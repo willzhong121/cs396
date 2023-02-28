@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=paAGQGJgr74
 
 **Fitness Curves**
 
-<img src="fitnesscurves.png"  width="60%" height="40%">
+<img src="fitnesscurve.png"  width="60%" height="40%">
 
 **Body & Brain Generation Explanation**
 
