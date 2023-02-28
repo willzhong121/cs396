@@ -45,7 +45,7 @@ class ROBOT:
                 desiredAngle = self.nn.Get_Value_Of(neuronName)
                 encoded_jointName = jointName.encode('utf-8')
                 self.motors[encoded_jointName].Set_Value(self.robotId, desiredAngle)
-                print(neuronName, jointName, desiredAngle)
+    
     
         # for i in self.motors:
             # self.motors[i].Set_Value(self.robotId, time)

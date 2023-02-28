@@ -9,7 +9,7 @@ import os
 
 class SOLUTION:
     def __init__(self, nextID):
-        self.weights = numpy.random.rand(5,4)
+        self.weights = numpy.random.rand(20,20)
         self.weights = self.weights * 2 -1
         self.myID = nextID
     
@@ -18,7 +18,7 @@ class SOLUTION:
         pyrosim.End()
 
     def Random_size(self):
-        return [random.random(), random.random(), random.random()]       
+        return [random.uniform(0.3,1),random.uniform(0.3,1),random.uniform(0.3,1)]    
 
     def Determine_sensor(self):
         num = random.randint(0, 1)
@@ -31,7 +31,7 @@ class SOLUTION:
         pyrosim.Start_URDF("body.urdf")
 
         colormain = self.Determine_sensor()
-        torso_dims = [random.uniform(0.5,1.5),random.uniform(1.5,2.5),random.uniform(0.1,1.5)]
+        torso_dims = [random.uniform(0.5,1.5),random.uniform(1.5,2.5),random.uniform(0.25,1.5)]
         torso_posn = [0, 0, 3]
         pyrosim.Send_Cube(
             name="Main", pos=torso_posn, size = torso_dims, colorString = colormain[0], colorName = colormain[1])
@@ -63,7 +63,42 @@ class SOLUTION:
             name = "Main_Limb4" , parent= "Main" , child = "Limb4" , type = "revolute", position = [-torso_dims[0]/2,-torso_dims[1]/3,3-torso_dims[2]/2])
         pyrosim.Send_Cube(
             name="Limb4", pos=[-leg4_dims[0]/2, 0, -leg4_dims[2]/2], size = leg4_dims, colorString = color4[0], colorName = color4[1])
+
+        color5 = self.Determine_sensor()
+        leg5_dims = self.Random_size() 
+        pyrosim.Send_Joint(
+            name = "Main_Limb5" , parent= "Main" , child = "Limb5" , type = "revolute", position = [-torso_dims[0]/2,0,3+torso_dims[2]/2])
+        pyrosim.Send_Cube(
+            name="Limb5", pos=[-leg5_dims[0]/2, 0, leg5_dims[2]/2], size = leg5_dims, colorString = color5[0], colorName = color5[1])
     
+        color6 = self.Determine_sensor()
+        leg6_dims = self.Random_size() 
+        pyrosim.Send_Joint(
+            name = "Main_Limb6" , parent= "Main" , child = "Limb6" , type = "revolute", position = [torso_dims[0]/2,0,3+torso_dims[2]/2])
+        pyrosim.Send_Cube(
+            name="Limb6", pos=[leg6_dims[0]/2, 0, leg6_dims[2]/2], size = leg6_dims, colorString = color6[0], colorName = color6[1])
+        
+        color7 = self.Determine_sensor()
+        leg7_dims = self.Random_size() 
+        pyrosim.Send_Joint(
+            name = "Main_Limb7" , parent= "Main" , child = "Limb7" , type = "revolute", position = [0,0,3+torso_dims[2]/2])
+        pyrosim.Send_Cube(
+            name="Limb7", pos=[0, 0, leg7_dims[2]/2], size = leg7_dims, colorString = color7[0], colorName = color7[1])
+        
+        color8 = self.Determine_sensor()
+        leg8_dims = self.Random_size() 
+        pyrosim.Send_Joint(
+            name = "Main_Limb8" , parent= "Main" , child = "Limb8" , type = "revolute", position = [0,-torso_dims[1]/2,3])
+        pyrosim.Send_Cube(
+            name="Limb8", pos=[0, -leg8_dims[1]/2, 0], size = leg8_dims, colorString = color8[0], colorName = color8[1])
+
+        color9 = self.Determine_sensor()
+        leg9_dims = self.Random_size() 
+        pyrosim.Send_Joint(
+            name = "Main_Limb9" , parent= "Main" , child = "Limb9" , type = "revolute", position = [0,torso_dims[1]/2,3])
+        pyrosim.Send_Cube(
+            name="Limb9", pos=[0, leg8_dims[1]/2, 0], size = leg9_dims, colorString = color9[0], colorName = color9[1])
+        
         pyrosim.End()
 
     def Create_Brain(self):
@@ -73,15 +108,19 @@ class SOLUTION:
         pyrosim.Send_Sensor_Neuron(name = 2 , linkName = "Limb2")
         pyrosim.Send_Sensor_Neuron(name = 3 , linkName = "Limb3")
         pyrosim.Send_Sensor_Neuron(name = 4 , linkName = "Limb4")
+        pyrosim.Send_Sensor_Neuron(name = 5 , linkName = "Limb5")
+        pyrosim.Send_Sensor_Neuron(name = 6 , linkName = "Limb6")
 
-        pyrosim.Send_Motor_Neuron( name = 5 , jointName = "Main_Limb1")
-        pyrosim.Send_Motor_Neuron( name = 6 , jointName = "Main_Limb2")
-        pyrosim.Send_Motor_Neuron( name = 7 , jointName = "Main_Limb3")
-        pyrosim.Send_Motor_Neuron( name = 8 , jointName = "Main_Limb4")
+        pyrosim.Send_Motor_Neuron( name = 8 , jointName = "Main_Limb1")
+        pyrosim.Send_Motor_Neuron( name = 9 , jointName = "Main_Limb2")
+        pyrosim.Send_Motor_Neuron( name = 10 , jointName = "Main_Limb3")
+        pyrosim.Send_Motor_Neuron( name = 11 , jointName = "Main_Limb4")
+        pyrosim.Send_Motor_Neuron( name = 12 , jointName = "Main_Limb5")
+        pyrosim.Send_Motor_Neuron( name = 13 , jointName = "Main_Limb6")
         
-        for currentRow in range(5):
-            for currentColumn in range(3):
-                pyrosim.Send_Synapse( sourceNeuronName = currentRow , targetNeuronName = currentColumn+5 , weight = self.weights[currentRow][currentColumn] )
+        for currentRow in range(7):
+            for currentColumn in range(6):
+                pyrosim.Send_Synapse( sourceNeuronName = currentRow , targetNeuronName = currentColumn+7 , weight = self.weights[currentRow][currentColumn] )
         
         pyrosim.End()
 
@@ -107,7 +146,13 @@ class SOLUTION:
         fitnessFileName = "fitness" + str(self.myID) + ".txt"
         while not os.path.exists(fitnessFileName):
             time.sleep(0.01)
-        f = open("fitness" + str(self.myID) + ".txt", "r")
+        while True:
+            try:
+                f = open("fitness" + str(self.myID) + ".txt", "r")
+                break
+            except:
+                pass
+        # f = open("fitness" + str(self.myID) + ".txt", "r")
         self.fitness = float(f.read())
         f.close()  
         os.system("del fitness" + str(self.myID) + ".txt")
