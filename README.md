@@ -15,7 +15,8 @@ WIP
 
 **Summary Video**
 
-WIP
+https://www.youtube.com/watch?v=KJeNfoUofRs
+(Video too large to be embedded)
 
 **General Diagram**
 
