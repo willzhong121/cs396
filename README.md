@@ -17,7 +17,7 @@ WIP
 
 [![Watch the video](https://img.youtube.com/vi/KJeNfoUofRs/hqdefault.jpg)](https://www.youtube.com/watch?v=KJeNfoUofRs)
 
-(Video too large to be embedded)
+(Video too large to be embedded - please click on the thumbnail to watch it on YouTube)
 
 **General Diagram**
 
