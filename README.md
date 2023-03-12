@@ -11,7 +11,7 @@ The 3D robot shown is the most fit from a population size of 5 and 5 number of g
 
 **Teaser**
 
-WIP
+![teaser](https://user-images.githubusercontent.com/106643042/224528315-e912cb5f-50b2-47a5-9837-7d80b0c4aada.gif)
 
 **Summary Video**
 
