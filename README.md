@@ -7,7 +7,7 @@ This codebase was created for the CS396 course at Northwestern University. It ge
 
 Simply run the "search.py" file to run the simulation and see an optimized 3D robot appear! 
 
-The 3D robot shown is the most fit from a population size of 10 and 100 number of generations. You can alter the population size and generation constants by changing the populationSize and numberOfGenerations variables in constants.py. To see the data of the most fit robot, open the file in the directory called "fitness*.txt", where * represents the generation number the robot was a part of.
+The 3D robot shown is the most fit from a population size of 5 and 5 number of generations. You can alter the population size and generation constants by changing the populationSize and numberOfGenerations variables in constants.py. The small population and generation size simply serve as baseline values so that a tester can ensure that the code runs correctly. To see the data of the most fit robot, open the file in the directory called "fitness*.txt", where * represents the generation number the robot was a part of.
 
 **Teaser**
 
@@ -45,7 +45,7 @@ Motor placement is determined by 50% probability. All of the links are compiled 
 
 **Evolution & Mutation Function Explanation**
 
-As mentioned in the synopsis, the fitness of a robot is determined by how far it moves in the positive x-direction. Robots start out by randomly wiggling around in their environment and as such produce a low fitness value. Over the course of 100 generations, the mutation function alters both the brain and body of the robots in an attempt to improve their fitness.
+As mentioned in the synopsis, the fitness of a robot is determined by how far it moves in the positive x-direction. Robots start out by randomly wiggling around in their environment and as such produce a low fitness value. Over the course of subsequent generations, the mutation function alters both the brain and body of the robots in an attempt to improve their fitness.
 
 The mutation function has a 100% probability of altering the weight of a random synapse. It does so by choosing a random synapse weight and altering it to random.random()*2-1. It has a 50% probability of altering the size of a random link. It does so by randomly choosing between 0 and 1. If 0 is chosen, no link is altered. If 1 is chosen, a random link is chosen from the dictionary containing every link and its size is regenerated with specific parameters (see diagram).
 
