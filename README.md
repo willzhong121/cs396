@@ -23,11 +23,11 @@ WIP
 
 **Genotype-to-Phenotype Map**
 
-WIP
+<img src="genophenomap.PNG"  width="60%" height="40%">
 
 **Mutation and Selection Diagram**
 
-WIP
+<img src="mutationdiagram.PNG"  width="60%" height="40%">
 
 **Fitness Curves**
 
