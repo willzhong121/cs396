@@ -13,6 +13,10 @@ The 3D robot shown is the most fit from a population size of 10 and 100 number o
 
 WIP
 
+**Summary Video**
+
+WIP
+
 **General Diagram**
 
 <img src="diagram.PNG"  width="60%" height="40%">
